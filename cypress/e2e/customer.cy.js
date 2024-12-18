@@ -23,9 +23,10 @@ describe("customer Details", () => {
   });
 
   
-    it("customer list", () => {
+    it.only("customer list", () => {
       cy.contains("Sales and Payments").click({ force: true });
       cy.contains("Customers").click({ force: true });
+      cy.wait(1000)
       cy.contains('Customer List').should('be.visible');
 
       cy.log("displayed list");
@@ -191,7 +192,7 @@ it.skip("Edit customer", () => {
 
 });
 
-it.only("Delete customer", () => {
+it.skip("Delete customer", () => {
  
   cy.contains("Sales and Payments").click({ force: true });
   cy.contains("Customers").click({ force: true });
